@@ -1,0 +1,24 @@
+.header-main {
+  border-bottom: 1px solid #000;
+  background-color: $color-black;
+  color: #fff;
+}
+
+.header-main__opt {
+  display: flex;
+}
+
+.header-main__opt span.fa {
+  padding: 1rem;
+  color: $color-light-grey;
+  cursor: pointer;
+}
+
+.header-main__logo {
+  flex-grow: 1;
+  padding-top: .8rem;
+}
+
+.header-main__logo img {
+  width: 3.5rem;
+}

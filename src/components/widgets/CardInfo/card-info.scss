@@ -1,0 +1,19 @@
+.card-info {
+  font-size: $s-size;
+}
+
+.card-info span.fa {
+  margin-right: .5rem;
+}
+
+.card-info__team {
+  display: inline-block;
+  padding: .2rem .5rem;
+  margin-right: 0.7rem;
+  background-color: $color-light-grey;
+  color: $color-light;
+}
+
+.card-info__date {
+  color: $color-light-blue;
+}

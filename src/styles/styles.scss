@@ -1,0 +1,14 @@
+//BASE
+@import './base/variables';
+@import './base/base';
+
+//COMPONENTS
+@import '../hoc/Layout/layout';
+@import '../components/Header/header';
+@import '../components/Home/home';
+@import '../components/widgets/NewsSlider/slider';
+@import '../components/widgets/Button/button';
+@import '../components/widgets/NewsList/news-list';
+@import '../components/widgets/CardInfo/card-info';
+@import '../components/Header/SideNav/side-nav-items';
+@import '../components/Footer/footer';

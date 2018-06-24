@@ -1,0 +1,21 @@
+.button {
+  width: 100%;
+  padding: .5rem;
+  border: none;
+
+  transition: .2s;
+}
+
+.loadeMore {
+  background-color: $color-blue;
+  color: $color-light-grey;
+  font-size: $msl-size;
+}
+
+.loadeMore:hover {
+  background-color: darken($color-blue, 10%);
+}
+
+.loadeMore:active {
+  opacity: .9;
+}
