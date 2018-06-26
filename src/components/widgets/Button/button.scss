@@ -1,21 +1,30 @@
 .button {
+  display: block;
   width: 100%;
   padding: .5rem;
   border: none;
+  box-sizing: border-box;
 
   transition: .2s;
 }
 
-.loadeMore {
+.loadeMore,
+.linkTo {
   background-color: $color-blue;
   color: $color-light-grey;
   font-size: $msl-size;
 }
 
-.loadeMore:hover {
+.linkTo {
+  text-decoration: none;
+}
+
+.loadeMore:hover,
+.linkTo:hover {
   background-color: darken($color-blue, 10%);
 }
 
-.loadeMore:active {
+.loadeMore:active,
+.linkTo:active {
   opacity: .9;
 }

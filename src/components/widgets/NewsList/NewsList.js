@@ -62,7 +62,7 @@ class NewsList extends Component {
     let template = null;
 
     switch(type) {
-      case ('card-home'):
+      case ('card-news'):
         template = this.state.items.map((item, i) => {
           return (
             <CSSTransition
@@ -77,13 +77,26 @@ class NewsList extends Component {
                 <Link
                   className='newsList__link'
                   to={`articles/${item.id}`}
-                  >
-                  <CardInfo 
-                    teams={this.state.teams}
-                    team={item.team}
-                    date={item.date}
-                  />
-                  <h2 className='newsList__title'>{item.title}</h2>
+                >
+                  { 
+                    this.props.img && (
+                      <div
+                        className='news-list__image'
+                        style={{
+                          backgroundImage: `url(/images/articles/${item.id}.jpg)`
+                        }}
+                      >
+                      </div>
+                    )
+                  }
+                  <div className={this.props.img && 'news-list__desc--width'}>
+                    <CardInfo 
+                      teams={this.state.teams}
+                      team={item.team}
+                      date={item.date}
+                    />
+                    <h2 className='newsList__title'>{item.title}</h2>
+                  </div>
                 </Link>
               </li>
             </CSSTransition>

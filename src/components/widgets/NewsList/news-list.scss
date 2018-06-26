@@ -1,12 +1,12 @@
 .newsList__item {
   display: block;
   padding: .5rem;
-  border: 2px solid #dddddd;
+  border: 2px solid $color-light-grey;
   border-top: none;
 }
 
 .newsList__link {
-  display: block;
+  display: flex;
   color: $color-grey;
   text-decoration: none;
 }
@@ -31,4 +31,17 @@
 .transition__wraper-active {
   opacity: 1;
   transform: translate(0);
+}
+
+.news-list__image {
+  width: 20%;
+  min-height: 6rem;
+  margin-right: 0.5rem;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.news-list__desc--width {
+  width: 80%;
 }

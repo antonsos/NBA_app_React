@@ -1,0 +1,47 @@
+.link {
+  color: $color-grey;
+  text-decoration: none;
+}
+
+.videos-template__wrapper {
+  display: flex;
+  border: 2px solid #dddddd;
+  border-top: none;
+  background-color: $color-light;
+}
+
+.videos-template__image {
+  position: relative;
+  width: 20%;
+  min-height: 6rem;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.videos-template__image-play {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/play.png');
+  background-position: center;
+  background-size: 4rem;
+  background-repeat: no-repeat;
+}
+
+.videos-template__desc {
+  width: 80%;
+  padding: .5rem;
+  text-align: justify;
+  box-sizing: border-box;
+}
+
+.videos-template__title {
+  padding: 0;
+  margin: .5rem 0 0 0;
+  font-size: $s-size;
+  text-align: center;
+  box-sizing: border-box;
+}

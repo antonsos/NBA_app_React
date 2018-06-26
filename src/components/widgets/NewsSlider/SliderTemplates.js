@@ -26,7 +26,7 @@ const SlidedrTemplates = (props) => {
             <div
               className='features-item'
               style={{
-                backgroundImage: `url(images/articles/${item.image})`
+                backgroundImage: `url(/images/articles/${item.image})`
               }}
             >
               <p className='features-item__title'>

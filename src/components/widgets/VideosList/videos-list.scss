@@ -1,0 +1,16 @@
+.videos-list__wrapper {
+  background-color: $color-light-grey;
+  text-align: center;
+}
+
+.videos-list__wrapper--height {
+  min-height: 87vh;
+}
+
+.videos-list__title {
+  padding: 1rem;
+  margin: 0;
+  color: $color-grey;
+  font-size: $msl-size;
+  font-weight: 300;
+}
