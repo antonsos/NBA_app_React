@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import axios from 'axios';
 
-//CONFIG
-import { URL } from '../../../config';
+//FIREBASE
+import { firebaseArticles, firebaseLooper, firebaseTeams } from '../../../firebase';
 
 //COMPONENTS
 import Button from '../Button/Button';
@@ -14,8 +13,6 @@ class NewsList extends Component {
   constructor(props) {
     super(props);
 
-    this.renderNews = this.renderNews.bind(this);
-    this.request = this.request.bind(this);
     this.loadeMore = this.loadeMore.bind(this);
 
     this.state ={
@@ -31,34 +28,57 @@ class NewsList extends Component {
     this.request(this.state.start, this.state.end);
   }
 
-  request(start, end) {
+  request = (start, end) => {
 
     if(this.state.teams.length < 1) {
-      axios.get(`${URL}teams`)
-      .then( response => {
+      firebaseTeams.once('value')
+      .then( snapshot => {
+        const teams = firebaseLooper(snapshot);
+
         this.setState({
-          teams: response.data
+          teams
         })
       })
+
+      // axios.get(`${URL}teams`)
+      // .then( response => {
+      //   this.setState({
+      //     teams: response.data
+      //   })
+      // })
     }
 
-    axios.get(`${URL}articles?_start=${start}&_end=${end}`)
-    .then( response => {
+    firebaseArticles.orderByChild('id').startAt(start).endAt(end).once('value')
+    .then( snapshot => {
+      const items = firebaseLooper(snapshot);
+
       this.setState({
-        items: [...this.state.items, ...response.data]
+        items: [...this.state.items, ...items],
+        start,
+        end
       })
-    });
+    })
+    .catch( err => {
+      console.log(err)
+    })
+
+    // axios.get(`${URL}articles?_start=${start}&_end=${end}`)
+    // .then( response => {
+    //   this.setState({
+    //     items: [...this.state.items, ...response.data],
+    //     start,
+    //     end
+    //   })
+    // });
   }
 
-  loadeMore() {
-    this.setState((prevState) => ({
-      end: prevState.end + this.state.amount
-    }))
+  loadeMore = () => {
+    let end = this.state.end + this.state.amount
 
-    this.request(this.state.end, this.state.end + this.state.amount);
+    this.request(this.state.end + 1, end);
   }
 
-  renderNews(type) {
+  renderNews = (type) => {
     let template = null;
 
     switch(type) {
@@ -83,7 +103,7 @@ class NewsList extends Component {
                       <div
                         className='news-list__image'
                         style={{
-                          backgroundImage: `url(/images/articles/${item.id}.jpg)`
+                          backgroundImage: `url(/images/articles/${item.image})`
                         }}
                       >
                       </div>

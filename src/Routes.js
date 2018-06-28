@@ -16,11 +16,11 @@ class Routes extends Component {
     return (
       <Layout>
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/news" exact component={News} />
-          <Route path="/videos" exact component={Videos} />
-          <Route path="/articles/:id" exact component={NewsArticles} />
-          <Route path="/videos/:id" exact component={VideosArticles} />
+        <Route path="/" exact component={Home}/>
+        <Route path="/news" exact component={News}/>
+        <Route path="/articles/:id" exact component={NewsArticles}/>
+        <Route path="/videos/:id" exact component={VideosArticles}/>
+        <Route path="/videos" exact component={Videos}/>
         </Switch>
       </Layout>
     )

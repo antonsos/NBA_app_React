@@ -19,7 +19,7 @@ const VideosTemplate = (props) => {
               backgroundImage: `url(/images/videos/${video.image})`
             }}
           >
-            <div className='videos-template__image-play'></div>
+            <div  className='videos-template__image-play'></div>
           </div>
           <div className='videos-template__desc'>
             <CardInfo 
