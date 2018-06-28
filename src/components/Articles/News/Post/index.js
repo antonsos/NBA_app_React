@@ -47,7 +47,7 @@ class NewsArticles extends Component {
   render() {
     return (
       <div style={{
-        minHeight: '85vh'
+        minHeight: '87vh'
       }}>
         <TeamHeader 
           team={this.state.team[0]}
