@@ -45,6 +45,25 @@ const FormFields = ({formdata, change, id}) => {
         )
 
         break;
+      case('select'):
+
+        formTemplate = (
+          <select
+            className='sign-form__input'
+            name={formdata.config.name}
+            value={formdata.value}
+            onChange={(event) => change({event, id, blur: false})}
+            onBlur={(event) => change({event, id, blur: true})}
+          >
+
+            { formdata.config.options.map( (option, i) => (
+              <option value={option.id} key={i}>{option.name}</option>
+            ))}
+
+          </select>
+        )
+
+        break;
       default:
         formTemplate = null;
     }

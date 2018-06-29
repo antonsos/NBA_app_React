@@ -1,7 +1,6 @@
 import React from 'react';
 
 const TeamInfo = (props) => {
-  console.log(props.team.logo)
   return (
     <header className='team-header'>
       <div 

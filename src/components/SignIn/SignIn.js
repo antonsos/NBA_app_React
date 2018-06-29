@@ -59,7 +59,7 @@ class SignIn extends Component {
     newElement.value = element.event.target.value;
 
     if(element.blur) {
-      const validData = this.validData(newElement);
+      let validData = this.validData(newElement);
 
       newElement.valid = validData[0];
       newElement.validationMessage = validData[1];

@@ -30,10 +30,10 @@ class VideosArticles extends Component {
           article,
           team
         })
+
+        this.getRalated();
       })
     })
-
-    this.getRalated();
 
     // axios.get(`${URL}videos?id=${this.props.match.params.id}`)
     // .then( response => {

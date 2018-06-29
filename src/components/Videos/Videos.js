@@ -11,7 +11,7 @@ const Videos = () => (
     loadmore={true}
     video={true}
     start={0}
-    end={3}
+    end={10}
   />
 )
 

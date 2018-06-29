@@ -15,4 +15,9 @@
 @import '../components/widgets/CardInfo/card-info';
 @import '../components/Header/SideNav/side-nav-items';
 @import '../components/FormFields/form-fields';
+@import '../components/Dashboard/dashboard';
+@import '../components/widgets/FileUploader/file-uploader';
 @import '../components/Footer/footer';
+
+//CSS REACT-DRAFT
+@import '../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
